@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block page_title %}Sign Up – Unlimited Mockups & Quizzes{% endblock %}
+
+{% block right_card %}
+<div id="signup" class="auth-card p-4 p-md-5 w-100" style="max-width: 520px;">
+  <h2 class="fw-bold mb-1">Sign Up</h2>
+  <p class="text-muted mb-4">Start your free account in seconds.</p>
+
+  <form method="POST" novalidate>
+    <!-- Full Name -->
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <div class="input-group input-with-icon">
+        <span class="input-group-text"><i class="bi bi-person"></i></span>
+        <input name="full_name" type="text" class="form-control custom-control" placeholder="John Doe" required />
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <div class="input-group input-with-icon">
+        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+        <input name="email" type="email" class="form-control custom-control" placeholder="name@example.com" required />
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="mb-4">
+      <label class="form-label">Password</label>
+      <div class="input-group input-with-icon">
+        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+        <input name="password" type="password" class="form-control custom-control" placeholder="••••••••" required />
+      </div>
+    </div>
+
+    <button type="submit" class="brand-gradient-btn w-100 mb-3">Create Account</button>
+  </form>
+
+  <p class="text-center text-muted login-text mb-3">
+    Already have an account?
+    <a href="{{ url_for('login') }}" class="fw-semibold">Log in</a>
+  </p>
+
+  <!-- OR separator -->
+  <div class="or-sep mb-3">
+    <div class="line"></div><div class="txt">OR</div><div class="line"></div>
+  </div>
+
+  <!-- Social/guest -->
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <button class="social-btn" type="button">
+        <i class="bi bi-google"></i> Continue with Google
+      </button>
+    </div>
+    <div class="col-12 col-md-6">
+      <a class="social-btn text-decoration-none" href="{{ url_for('guest') }}">
+        <i class="bi bi-person"></i> Continue as Guest
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

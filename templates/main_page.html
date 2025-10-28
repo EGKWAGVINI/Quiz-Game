@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Practice • Skills • Fun</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    :root{
+      --brand-pink:#e35679;      /* carry over from your previous pages */
+      --brand-dark:#2c4aae;
+      --brand-accent:#a63853;
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --tile:#f8f9fb;
+      --ring:#eaecef;
+    }
+    html,body{height:100%}
+    body{
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    /* Topbar */
+    .brandbar{
+      border-bottom:1px solid var(--ring);
+      background:#fff;
+    }
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    /* Nav “chips” */
+    .chip{
+      border:1px solid var(--ring);
+      background:#fff;
+      color:var(--text);
+      padding:.55rem .9rem;
+      border-radius:999px;
+      font-weight:600;
+      display:flex; align-items:center; gap:.5rem;
+      transition: all .15s ease;
+    }
+    .chip:hover{ transform: translateY(-1px); box-shadow:0 6px 16px rgba(0,0,0,.06); }
+    .chip i{ font-size:1.05rem; opacity:.85; }
+
+    /* Hero */
+    .hero{
+      background: radial-gradient(1200px 400px at 10% -10%, rgba(227,86,121,.20), transparent 50%),
+                  radial-gradient(1200px 400px at 110% 10%, rgba(44,74,174,.15), transparent 50%);
+      border-bottom:1px solid var(--ring);
+    }
+    .hero .badge{ background:#fff; color:#111; }
+
+    /* Section header */
+    .section-title{
+      font-weight:700;
+      font-size:clamp(1.2rem, .9rem + 1.2vw, 1.6rem);
+    }
+    .section-sub{ color:var(--muted); }
+
+    /* Tiles */
+    .tile{
+      background:var(--tile);
+      border:1px solid var(--ring);
+      border-radius:18px;
+      padding:22px;
+      height:100%;
+      display:flex; flex-direction:column; gap:14px;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    .tile:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0,0,0,.08);
+      border-color: #dadde3;
+    }
+    .tile .ti{
+      width:48px; height:48px; display:grid; place-items:center;
+      border-radius:12px; background:#fff; border:1px solid var(--ring);
+      font-size:1.2rem;
+    }
+    .tile h5{ font-weight:700; margin:0; }
+    .tile p{ color:var(--muted); margin:0; }
+
+    /* Footer */
+    footer{
+      border-top:1px solid var(--ring);
+      background:#fff;
+    }
+    .fun-badge{
+      background:linear-gradient(90deg,var(--brand-dark),var(--brand-accent));
+      color:#fff; border-radius:999px; padding:.35rem .75rem; font-weight:600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="brandbar">
+    <div class="container py-3">
+      <div class="d-flex align-items-center justify-content-between gap-3">
+        <div class="d-flex align-items-center gap-2">
+          <span class="brand h4 mb-0">AI Learning Hub</span>
+        </div>
+
+        <!-- nav chips from PDF: Practice, Skills, Discussion Bot, FlashCards, Game, 5-Min Quiz -->
+        <nav class="d-none d-lg-flex align-items-center flex-wrap gap-2">
+          <a class="chip" href="#"><i class="bi bi-lightning-charge"></i>Practice</a>
+          <a class="chip" href="#"><i class="bi bi-mortarboard"></i>Skills</a>
+          <a class="chip" href="#"><i class="bi bi-chat-dots"></i>Discussion Bot</a>
+          <a class="chip" href="#"><i class="bi bi-layers"></i>FlashCards</a>
+          <a class="chip" href="#"><i class="bi bi-controller"></i>Game</a>
+          <a class="chip" href="#"><i class="bi bi-stopwatch"></i>5-Min Quiz</a>
+        </nav>
+
+        <!-- mobile menu icon (non-functional placeholder) -->
+        <button class="btn btn-outline-secondary d-lg-none"><i class="bi bi-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container py-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <span class="badge fw-semibold mb-3">Practice • Skills</span>
+          <h1 class="display-5 fw-bold mb-3">Artificial Intelligence</h1>
+          <p class="lead text-secondary mb-0">
+            Learn, practice, and play your way through AI. Use discussion bots, flashcards, games, and quick quizzes to master core concepts—fast.
+          </p>
+        </div>
+        <div class="col-lg-5 text-lg-end">
+          <!-- optional illustration slot -->
+          <i class="bi bi-cpu" style="font-size:72px; opacity:.25;"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tiles: “Artificial Intelligence” repeated grid -->
+  <main class="container py-5">
+    <div class="d-flex align-items-end justify-content-between mb-3">
+      <div>
+        <div class="section-title">Artificial Intelligence</div>
+        <div class="section-sub">Pick a mode and start learning.</div>
+      </div>
+      <a href="#" class="btn btn-outline-secondary btn-sm">View all</a>
+    </div>
+
+    <div class="row g-3 g-sm-4">
+      <!-- 12 tiles (you can adjust the count) -->
+      <!-- Tile template -->
+      <!-- Practice -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a class="tile text-decoration-none" href="#">
+          <div class="ti"><i class="bi bi-lightning-charge"></i></div>
+          <h5>Practice Sets</h5>
+          <p>Targeted AI exercises with hints.</p>
+        </a>
+      </div>
+
+      <!-- Skills -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a class="tile text-decoration-none" href="#">
+          <div class="ti"><i class="bi bi-mortarboard"></i></div>
+          <h5>Skill Paths</h5>
+          <p>Step-by-step concepts & checkpoints.</p>
+        </a>
+      </div>
+
+      <!-- Discussion Bot -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a class="tile text-decoration-none" href="#">
+          <div class="ti"><i class="bi bi-chat-dots"></i></div>
+          <h5>Discussion Bot</h5>
+          <p>Ask questions and test understanding.</p>
+        </a>
+      </div>
+
+      <!-- FlashCards -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a class="tile text-decoration-none" href="#">
+          <div class="ti"><i class="bi bi-layers"></i></div>
+          <h5>FlashCards</h5>
+          <p>Key terms & formulas, fast recall.</p>
+        </a>
+      </div>
+
+      <!-- Game -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a class="tile text-decoration-none" href="#">
+          <div class="ti"><i class="bi bi-controller"></i></div>
+          <h5>Game Mode</h5>
+          <p>Fun challenges to reinforce learning.</p>
+        </a>
+      </div>
+
+      <!-- 5-Min Quiz -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a class="tile text-decoration-none" href="#">
+          <div class="ti"><i class="bi bi-stopwatch"></i></div>
+          <h5>5-Min Quiz</h5>
+          <p>Timed checks to track progress.</p>
+        </a>
+      </div>
+
+      <!-- Additional AI tiles (same heading as in PDF) -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a class="tile text-decoration-none" href="#">
+          <div class="ti"><i class="bi bi-diagram-3"></i></div>
+          <h5>ML Basics</h5>
+          <p>Supervised, unsupervised, and more.</p>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a class="tile text-decoration-none" href="#">
+          <div class="ti"><i class="bi bi-robot"></i></div>
+          <h5>Agents</h5>
+          <p>Reasoning, planning, and actions.</p>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a class="tile text-decoration-none" href="#">
+          <div class="ti"><i class="bi bi-card-checklist"></i></div>
+          <h5>Evaluation</h5>
+          <p>Metrics & error analysis.</p>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a class="tile text-decoration-none" href="#">
+          <div class="ti"><i class="bi bi-sliders2"></i></div>
+          <h5>Tuning</h5>
+          <p>Hyper-params & fine-tuning tips.</p>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a class="tile text-decoration-none" href="#">
+          <div class="ti"><i class="bi bi-shield-check"></i></div>
+          <h5>Safety</h5>
+          <p>Bias, privacy, robustness.</p>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <a class="tile text-decoration-none" href="#">
+          <div class="ti"><i class="bi bi-diagram-2"></i></div>
+          <h5>Systems</h5>
+          <p>RAG, pipelines, deployment.</p>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+      <div class="d-flex align-items-center gap-2">
+        <span class="fun-badge">Fun Game and Information</span>
+        <span class="text-secondary">Learn • Play • Grow</span>
+      </div>
+      <div class="text-secondary small">© <span id="y"></span> AI Learning Hub</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
